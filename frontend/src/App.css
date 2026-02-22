@@ -1,0 +1,8 @@
+.login-container { display: flex; height: 100vh; font-family: 'Segoe UI', sans-serif; }
+.login-sidebar { flex: 1; background: #2563eb; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+.login-form-section { flex: 1; display: flex; align-items: center; justify-content: center; background: white; }
+.login-box { width: 350px; padding: 2rem; }
+.input-group { display: flex; align-items: center; border: 1px solid #ddd; margin-bottom: 1rem; padding: 0.5rem; border-radius: 8px; }
+.input-group input { border: none; outline: none; margin-left: 10px; width: 100%; }
+.login-btn { width: 100%; padding: 0.8rem; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.status-msg { margin-top: 1rem; color: #dc2626; text-align: center; }
