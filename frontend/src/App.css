@@ -1,8 +1,43 @@
-.login-container { display: flex; height: 100vh; font-family: 'Segoe UI', sans-serif; }
-.login-sidebar { flex: 1; background: #2563eb; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
-.login-form-section { flex: 1; display: flex; align-items: center; justify-content: center; background: white; }
-.login-box { width: 350px; padding: 2rem; }
-.input-group { display: flex; align-items: center; border: 1px solid #ddd; margin-bottom: 1rem; padding: 0.5rem; border-radius: 8px; }
-.input-group input { border: none; outline: none; margin-left: 10px; width: 100%; }
-.login-btn { width: 100%; padding: 0.8rem; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
-.status-msg { margin-top: 1rem; color: #dc2626; text-align: center; }
+.nav-logo-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.nav-links {
+  list-style: none;
+  flex-grow: 1;
+}
+
+.nav-links li.active {
+  background: #3b82f6;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  color: white;
+}
+
+.table-wrapper {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.edit-action-btn {
+  padding: 5px 12px;
+  cursor: pointer;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.edit-action-btn:hover {
+  background: #e2e8f0;
+}
