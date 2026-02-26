@@ -1,41 +1,34 @@
-const { Connection, Request } = require('tedious');
-
-// Configuración de la conexión usando variables de entorno
-// Estas variables se las pasaremos al contenedor al hacer el 'docker run'
+const { Connection } = require('tedious');
+ 
 const config = {
-    server: process.env.DB_SERVER || 'db.schoolwaysv.online', 
+    server: process.env.DB_SERVER || 'db.schoolwaysv.online',
     authentication: {
         type: 'default',
         options: {
             userName: process.env.DB_USER || 'sa',
-            password: process.env.DB_PASSWORD || 'Up3d2026ProAp#',
+            password: process.env.DB_PASSWORD || 'Up3d2026ProAp#'
         }
     },
     options: {
         database: process.env.DB_NAME || 'schoolwaysv',
         encrypt: true,
-        trustServerCertificate: true, // Necesario para conexiones locales/VPN
-        port: 1433
+        trustServerCertificate: true,
+        port: 1433,
+        rowCollectionOnRequestCompletion: true
     }
 };
-
+ 
 const connection = new Connection(config);
-
-const connect = () => {
-    connection.on('connect', (err) => {
-        if (err) {
-            console.error('❌ Error de conexión a la base de datos:', err.message);
-            // Reintento automático en caso de fallo
-            setTimeout(connect, 5000);
-        } else {
-            console.log('✅ Conectado exitosamente al Servidor SQL (Servidor A)');
-        }
-    });
-
-    connection.connect();
-};
-
+ 
+connection.on('connect', err => {
+    if (err) {
+        console.error('❌ Error conectando a SQL Server:', err.message);
+    } else {
+        console.log('✅ Conectado correctamente a SQL Server');
+    }
+});
+ 
 module.exports = {
     connection,
-    connect
+    connect: () => connection.connect()
 };
